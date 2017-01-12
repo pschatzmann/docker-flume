@@ -1,0 +1,16 @@
+version: '2'
+services:
+    flume:
+      image: pschatzmann/flume
+      container_name: flume
+      volumes:
+        - /srv/flume/plugins.d:/flume/plugins.d
+      restart: always
+      environment:
+        - AGENT=agent
+        - CONFIG=flume.conf
+        - LOGGER=INFO,console
+
+
+
+
